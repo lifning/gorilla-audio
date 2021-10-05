@@ -48,24 +48,24 @@ ENABLE_FLAC := 1
 
 GA_SRC := src/ga/ga.c src/ga/trans.c src/ga/memory.c src/ga/stream.c src/ga/system.c src/ga/log.c src/ga/devices/dummy.c src/ga/devices/wav.c
 GAU_SRC := src/gau/gau.c src/gau/datasrc/file.c src/gau/datasrc/memory.c src/gau/samplesrc/loop.c src/gau/samplesrc/sound.c src/gau/samplesrc/stream.c src/gau/samplesrc/wav.c src/gau/samplesrc/ogg-vorbis.c src/gau/samplesrc/ogg-opus.c src/gau/samplesrc/flac.c
-OGG_SRC := ext/libogg/src/bitwise.c ext/libogg/src/framing.c
-FLAC_SRC := ext/libflac/src/libFLAC/bitmath.c ext/libflac/src/libFLAC/bitreader.c ext/libflac/src/libFLAC/bitwriter.c ext/libflac/src/libFLAC/cpu.c ext/libflac/src/libFLAC/crc.c ext/libflac/src/libFLAC/fixed.c ext/libflac/src/libFLAC/fixed_intrin_sse2.c ext/libflac/src/libFLAC/fixed_intrin_ssse3.c ext/libflac/src/libFLAC/float.c ext/libflac/src/libFLAC/format.c ext/libflac/src/libFLAC/lpc.c ext/libflac/src/libFLAC/lpc_intrin_sse.c ext/libflac/src/libFLAC/lpc_intrin_sse2.c ext/libflac/src/libFLAC/lpc_intrin_sse41.c ext/libflac/src/libFLAC/lpc_intrin_avx2.c ext/libflac/src/libFLAC/md5.c ext/libflac/src/libFLAC/memory.c ext/libflac/src/libFLAC/metadata_iterators.c ext/libflac/src/libFLAC/metadata_object.c ext/libflac/src/libFLAC/stream_decoder.c ext/libflac/src/libFLAC/stream_encoder.c ext/libflac/src/libFLAC/stream_encoder_intrin_sse2.c ext/libflac/src/libFLAC/stream_encoder_intrin_ssse3.c ext/libflac/src/libFLAC/stream_encoder_intrin_avx2.c ext/libflac/src/libFLAC/stream_encoder_framing.c ext/libflac/src/libFLAC/window.c
-ifeq ($(TARGET),mingw)
-	FLAC_SRC += ext/libflac/src/libFLAC/windows_unicode_filenames.c
-endif
+#OGG_SRC := ext/libogg/src/bitwise.c ext/libogg/src/framing.c
+#FLAC_SRC := ext/libflac/src/libFLAC/bitmath.c ext/libflac/src/libFLAC/bitreader.c ext/libflac/src/libFLAC/bitwriter.c ext/libflac/src/libFLAC/cpu.c ext/libflac/src/libFLAC/crc.c ext/libflac/src/libFLAC/fixed.c ext/libflac/src/libFLAC/fixed_intrin_sse2.c ext/libflac/src/libFLAC/fixed_intrin_ssse3.c ext/libflac/src/libFLAC/float.c ext/libflac/src/libFLAC/format.c ext/libflac/src/libFLAC/lpc.c ext/libflac/src/libFLAC/lpc_intrin_sse.c ext/libflac/src/libFLAC/lpc_intrin_sse2.c ext/libflac/src/libFLAC/lpc_intrin_sse41.c ext/libflac/src/libFLAC/lpc_intrin_avx2.c ext/libflac/src/libFLAC/md5.c ext/libflac/src/libFLAC/memory.c ext/libflac/src/libFLAC/metadata_iterators.c ext/libflac/src/libFLAC/metadata_object.c ext/libflac/src/libFLAC/stream_decoder.c ext/libflac/src/libFLAC/stream_encoder.c ext/libflac/src/libFLAC/stream_encoder_intrin_sse2.c ext/libflac/src/libFLAC/stream_encoder_intrin_ssse3.c ext/libflac/src/libFLAC/stream_encoder_intrin_avx2.c ext/libflac/src/libFLAC/stream_encoder_framing.c ext/libflac/src/libFLAC/window.c
+#ifeq ($(TARGET),mingw)
+#	FLAC_SRC += ext/libflac/src/libFLAC/windows_unicode_filenames.c
+#endif
 
-OPUSFILE_SRC := ext/opusfile/src/opusfile.c ext/opusfile/src/info.c ext/opusfile/src/internal.c ext/opusfile/src/stream.c 
-VORBIS_SRC := ext/libvorbis/lib/analysis.c ext/libvorbis/lib/bitrate.c ext/libvorbis/lib/block.c ext/libvorbis/lib/codebook.c ext/libvorbis/lib/envelope.c ext/libvorbis/lib/floor0.c ext/libvorbis/lib/floor1.c ext/libvorbis/lib/info.c ext/libvorbis/lib/lpc.c ext/libvorbis/lib/lsp.c ext/libvorbis/lib/mapping0.c ext/libvorbis/lib/mdct.c ext/libvorbis/lib/psy.c ext/libvorbis/lib/registry.c ext/libvorbis/lib/res0.c ext/libvorbis/lib/sharedbook.c ext/libvorbis/lib/smallft.c ext/libvorbis/lib/synthesis.c ext/libvorbis/lib/vorbisfile.c ext/libvorbis/lib/window.c
+#OPUSFILE_SRC := ext/opusfile/src/opusfile.c ext/opusfile/src/info.c ext/opusfile/src/internal.c ext/opusfile/src/stream.c 
+#VORBIS_SRC := ext/libvorbis/lib/analysis.c ext/libvorbis/lib/bitrate.c ext/libvorbis/lib/block.c ext/libvorbis/lib/codebook.c ext/libvorbis/lib/envelope.c ext/libvorbis/lib/floor0.c ext/libvorbis/lib/floor1.c ext/libvorbis/lib/info.c ext/libvorbis/lib/lpc.c ext/libvorbis/lib/lsp.c ext/libvorbis/lib/mapping0.c ext/libvorbis/lib/mdct.c ext/libvorbis/lib/psy.c ext/libvorbis/lib/registry.c ext/libvorbis/lib/res0.c ext/libvorbis/lib/sharedbook.c ext/libvorbis/lib/smallft.c ext/libvorbis/lib/synthesis.c ext/libvorbis/lib/vorbisfile.c ext/libvorbis/lib/window.c
 
-include ext/libopus/silk_sources.mk
-include ext/libopus/celt_sources.mk
-include ext/libopus/opus_sources.mk
-OPUS_SRC := $(patsubst %,ext/libopus/%,$(SILK_SOURCES) $(SILK_SOURCES_FLOAT) $(CELT_SOURCES) $(OPUS_SOURCES) $(OPUS_SOURCES_FLOAT))
+#include ext/libopus/silk_sources.mk
+#include ext/libopus/celt_sources.mk
+#include ext/libopus/opus_sources.mk
+#OPUS_SRC := $(patsubst %,ext/libopus/%,$(SILK_SOURCES) $(SILK_SOURCES_FLOAT) $(CELT_SOURCES) $(OPUS_SOURCES) $(OPUS_SOURCES_FLOAT))
 
 GA_CFLAGS := -Iinclude -DGAU_SUPPORT_FLAC=$(ENABLE_FLAC) -DGAU_SUPPORT_VORBIS=$(ENABLE_VORBIS) -DGAU_SUPPORT_OPUS=$(ENABLE_OPUS)
 GA_CXXFLAGS := -Iinclude
-FLAC_CFLAGS := -Iext/libflac/src/libFLAC/include -DHAVE_STDINT_H -DHAVE_LROUND -DFLAC__HAS_OGG=0 -DPACKAGE_VERSION="\"(gorilla audio)\""
-OPUS_CFLAGS := -Iext/libopus/celt -Iext/libopus/silk -Iext/libopus/silk/float -DOPUS_BUILD -DUSE_ALLOCA -DHAVE_LRINT -DHAVE_LRINTF -DHAVE_STDINT_H -DPACKAGE_VERSION="\"(gorilla audio)\"" -DSKIP_CONFIG_H
+#FLAC_CFLAGS := -Iext/libflac/src/libFLAC/include -DHAVE_STDINT_H -DHAVE_LROUND -DFLAC__HAS_OGG=0 -DPACKAGE_VERSION="\"(gorilla audio)\""
+#OPUS_CFLAGS := -Iext/libopus/celt -Iext/libopus/silk -Iext/libopus/silk/float -DOPUS_BUILD -DUSE_ALLOCA -DHAVE_LRINT -DHAVE_LRINTF -DHAVE_STDINT_H -DPACKAGE_VERSION="\"(gorilla audio)\"" -DSKIP_CONFIG_H
 
 ifeq ($(ASAN),1)
 	CFLAGS += -fsanitize=address -fsanitize=undefined
@@ -168,17 +168,25 @@ endif
 ALL_SRC := $(GA_SRC) $(GAU_SRC)
 
 ifeq ($(ENABLE_FLAC),1)
-	ALL_SRC += $(FLAC_SRC)
+	#ALL_SRC += $(FLAC_SRC)
+	CFLAGS += `pkg-config --cflags flac`
+	LFLAGS += `pkg-config --libs flac`
 endif
 
 ifneq ($(ENABLE_OPUS)$(ENABLE_VORBIS),00)
-	ALL_SRC += $(OGG_SRC)
+	#ALL_SRC += $(OGG_SRC)
+	CFLAGS += `pkg-config --cflags ogg`
+	LFLAGS += `pkg-config --libs ogg`
 endif
 ifeq ($(ENABLE_OPUS),1)
-	ALL_SRC += $(OPUS_SRC) $(OPUSFILE_SRC)
+	# ALL_SRC += $(OPUS_SRC) $(OPUSFILE_SRC)
+	CFLAGS += `pkg-config --cflags opus opusfile`
+	LFLAGS += `pkg-config --libs opus opusfile`
 endif
 ifeq ($(ENABLE_VORBIS),1)
-	ALL_SRC += $(VORBIS_SRC)
+	#ALL_SRC += $(VORBIS_SRC)
+	CFLAGS += `pkg-config --cflags vorbis`
+	LFLAGS += `pkg-config --libs vorbis`
 endif
 
 
